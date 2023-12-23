@@ -46,7 +46,7 @@ sh
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 
-# ## Install the required dependencies:
+# Install the required dependencies:
 
 sh
 
