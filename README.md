@@ -66,13 +66,14 @@ self-talking-chatbot/
  ```
 # ## Running the Application
 
-# ## Start the Flask server:
+Start the Flask server:
  ```
 python chatbot_VS_chatbot.py
  ```
- ```
+ 
 Open a web browser and go to http://localhost:5000 to view the chat interface.
 Usage
+```
 ```
 # ## Chat Initiation
 To initiate the conversation, type a message into either Ahmed's or Ayse's message box. After the initial input, the chatbots will continue the conversation on their own.
