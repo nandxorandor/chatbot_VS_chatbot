@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Talking Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 30%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .message-container {
+            width: 70%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column-reverse;
+            overflow-y: auto;
+        }
+        .message {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px 0;
+            width: fit-content;
+            max-width: 80%;
+        }
+        .chatbot-message {
+            align-self: flex-start;
+            background-color: #f1f1f1;
+        }
+        .user-message {
+            align-self: flex-end;
+            background-color: #007bff;
+            color: white;
+        }
+        textarea {
+            width: calc(100% - 22px);
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+		.ahmed-message {
+    background-color: #90ee90; /* Light green for Ahmed */
+    /* Rest of the styles */
+}
+
+.ayse-message {
+    background-color: #ffc0cb; /* Light pink for Ayse */
+    /* Rest of the styles */
+}
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h2>Ahmed</h2>
+        <textarea id="chatbot1-input" placeholder="Chatbot-1's message..."></textarea>
+        <button onclick="sendMessage(1)">Send</button>
+        
+        <h2>Ayse</h2>
+        <textarea id="chatbot2-input" placeholder="Chatbot-2's message..."></textarea>
+        <button onclick="sendMessage(2)">Send</button>
+    </div>
+    
+    <div class="message-container" id="message-container">
+        <!-- Messages will be dynamically appended here -->
+    </div>
+
+    <script>
+    // Define the appendMessage function
+		function appendMessage(chatbotName, messageText) {
+    var messageContainer = document.getElementById('message-container');
+    var messageDiv = document.createElement('div');
+    messageDiv.classList.add('message', `${chatbotName.toLowerCase()}-message`); // Use chatbot name for styling
+
+    var messageLabel = document.createElement('span');
+    messageLabel.classList.add('label');
+    messageLabel.textContent = `${chatbotName}: `; // Use chatbot name for labeling
+    messageDiv.appendChild(messageLabel);
+
+    var textNode = document.createTextNode(messageText);
+    messageDiv.appendChild(textNode);
+
+    messageContainer.insertBefore(messageDiv, messageContainer.firstChild); // Insert message at the top
+    messageContainer.scrollTop = 0; // Scroll to the top to show the latest message
+}
+
+
+
+    // Define the sendMessage function
+    function sendMessage(chatbotNumber) {
+        var userInputField = document.getElementById(`chatbot${chatbotNumber}-input`);
+        var messageText = userInputField.value.trim();
+        if (messageText === '') return;
+
+        // Clear the user input field
+        userInputField.value = ''; 
+
+        // Start the conversation loop
+        continueConversation(chatbotNumber, messageText);
+    }
+
+    // Define the continueConversation function
+    function continueConversation(chatbotNumber, messageText) {
+    // Determine the target chatbot for the message
+    var targetChatbot = chatbotNumber === 1 ? 2 : 1;
+
+    // AJAX request to send the message to the target chatbot
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', `/chatbot${targetChatbot}`, true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var response = JSON.parse(this.responseText);
+        // Use the chatbot's name in the appendMessage function call
+        appendMessage(response.name, response.response);
+
+            // Check for stop condition here
+            if(response.response.includes("Goodbye")) {
+                console.log("Conversation ended.");
+                return;
+            }
+
+            // Continue the conversation with the other chatbot
+            setTimeout(() => {
+                continueConversation(targetChatbot, response.response);
+            }, 1000); // wait for 1 second before the next message
+        }
+    };
+    xhr.send(`user_input=${encodeURIComponent(messageText)}`);
+}
+
+</script>
+
+</body>
+</html>
