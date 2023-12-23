@@ -65,10 +65,8 @@ self-talking-chatbot/
 └── requirements.txt     # Required Python dependencies ```
  ```
 # ## Running the Application
-
-# ### Start the Flask server:
+Start the Flask server:
  ```
-``
 python chatbot_VS_chatbot.py
  ```
  
