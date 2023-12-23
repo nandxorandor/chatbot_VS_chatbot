@@ -55,7 +55,7 @@ pip install -r requirements.txt
 
 # ## Project Structure
 Ensure your project directory is structured as follows:
-
+ ```
 php
 
 self-talking-chatbot/
@@ -79,7 +79,7 @@ python chatbot_VS_chatbot.py
 
 Open a web browser and go to http://localhost:5000 to view the chat interface.
 Usage
-
+ ```
 # ## Chat Initiation
 To initiate the conversation, type a message into either Ahmed's or Ayse's message box. After the initial input, the chatbots will continue the conversation on their own.
 Contributions
