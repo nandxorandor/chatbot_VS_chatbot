@@ -52,9 +52,9 @@ sh
 
 pip install -r requirements.txt
 
-Project Structure
 
-# ## Ensure your project directory is structured as follows:
+# ## Project Structure
+Ensure your project directory is structured as follows:
 
 php
 
