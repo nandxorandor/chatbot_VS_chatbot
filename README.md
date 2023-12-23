@@ -83,6 +83,13 @@ Usage
 To initiate the conversation, type a message into either Ahmed's or Ayse's message box. After the initial input, the chatbots will continue the conversation on their own.
 Contributions
 
+## Stopping the Chat
+
+To end the chat conversation between the two chatbots, simply type 'goodbye' in either of the chat inputs. This will signal the chatbots to stop their current conversation.
+
+## Known Glitch
+
+Please note, there is a known glitch in the system: If you try to interrupt the ongoing chat with a new message, the program might crash. We are aware of this issue and are working on a fix. In the meantime, we appreciate your patience and understanding.
 Contributions are welcome. If you have ideas for improvement or want to contribute, please fork the repository, make your changes, and create a pull request.
 License
 
