@@ -44,7 +44,7 @@ Create and activate a virtual environment:
 sh
 
 python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`'''
 
 # ## Install the required dependencies:
 
@@ -67,7 +67,7 @@ self-talking-chatbot/
 │   └── css/             # (Optional) CSS files for styling
 │
 ├── chatbot_VS_chatbot.py       # The main Flask application file
-└── requirements.txt     # Required Python dependencies
+└── requirements.txt     # Required Python dependencies ```
 
 # ## Running the Application
 
