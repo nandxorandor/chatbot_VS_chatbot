@@ -34,30 +34,25 @@ The chatbot platform is designed to work both with and without a GPU. If a GPU i
 # ## Project Installation
 
 Clone the repository and navigate to the project directory:
-
+ ```
 
 git clone https://github.com/nandxorandor/chatbot_VS_chatbot.git
 cd self-talking-chatbot
-
+ ```
 Create and activate a virtual environment:
-
-sh
-
+ ```
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-
+ ```
 # Install the required dependencies:
 
-sh
-
+ ```
 pip install -r requirements.txt
-
+ ```
 
 # ## Project Structure
 Ensure your project directory is structured as follows:
  ```
-php
-
 self-talking-chatbot/
 │
 ├── templates/
@@ -72,14 +67,13 @@ self-talking-chatbot/
 # ## Running the Application
 
 Start the Flask server:
-
-sh
-
+ ```
 python chatbot_VS_chatbot.py
-
+ ```
+ ```
 Open a web browser and go to http://localhost:5000 to view the chat interface.
 Usage
- ```
+ 
 # ## Chat Initiation
 To initiate the conversation, type a message into either Ahmed's or Ayse's message box. After the initial input, the chatbots will continue the conversation on their own.
 Contributions
