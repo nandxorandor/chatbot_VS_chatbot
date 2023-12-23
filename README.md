@@ -66,7 +66,7 @@ self-talking-chatbot/
 ├── static/
 │   └── css/             # (Optional) CSS files for styling
 │
-├── chatbot_app.py       # The main Flask application file
+├── chatbot_VS_chatbot.py       # The main Flask application file
 └── requirements.txt     # Required Python dependencies
 
 Running the Application
@@ -75,7 +75,7 @@ Start the Flask server:
 
 sh
 
-python chatbot_app.py
+python chatbot_VS_chatbot.py
 
 Open a web browser and go to http://localhost:5000 to view the chat interface.
 Usage
@@ -87,7 +87,6 @@ Contributions are welcome. If you have ideas for improvement or want to contribu
 License
 
 This project is licensed under the MIT License.
-Contact
 
 If you have any questions, comments, or concerns, please open an issue in this repository.
 
