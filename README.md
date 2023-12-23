@@ -35,7 +35,7 @@ The chatbot platform is designed to work both with and without a GPU. If a GPU i
 
 Clone the repository and navigate to the project directory:
 
-```sh
+
 git clone https://github.com/nandxorandor/chatbot_VS_chatbot.git
 cd self-talking-chatbot
 
